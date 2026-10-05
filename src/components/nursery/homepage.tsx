@@ -4,14 +4,17 @@ import { Button } from '@/components/ui/button';
 import hero from '@/assets/nursery-hero.jpg';
 import story from '@/assets/nursery-story.jpg';
 import leaves from '@/assets/foreground-leaves.png';
-import trees from '@/assets/trees.jpg.asset.json';
-import hedges from '@/assets/hedges.jpg.asset.json';
+import treeImage from '@/assets/ornamental-tree.jpg';
+import hedgeImage from '@/assets/hedge-plants.jpg';
 import flowers from '@/assets/flowers.jpg.asset.json';
 import succulents from '@/assets/succulents.jpg.asset.json';
-import indoor from '@/assets/indoor.jpg.asset.json';
+import indoorImage from '@/assets/indoor-monstera.jpg';
 import { useBotanicalMotion } from './use-botanical-motion';
 
 const navigation = [['Home', '#home'], ['Plants', '#plants'], ['Services', '#services'], ['About', '#about'], ['Gallery', '#gallery'], ['Resources', '#resources'], ['Contact', '#contact']];
+const trees = { url: treeImage };
+const hedges = { url: hedgeImage };
+const indoor = { url: indoorImage };
 const plants = [
   { name: 'Ornamental Trees', subtitle: 'Timeless beauty. Lasting presence.', image: trees.url, description: 'Discover statement trees that bring structure, shade, and enduring character to your landscape. Speak with our team about the right variety for your space.' },
   { name: 'Shrubs & Hedges', subtitle: 'Shape your own sanctuary.', image: hedges.url, description: 'Create living boundaries, layered greenery, and beautifully structured gardens. Our team can help you choose plants suited to your light, soil, and vision.' },

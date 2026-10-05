@@ -1,24 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router';
+import { NurseryHomepage } from '@/components/nursery/homepage';
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
+export const Route = createFileRoute('/')({
+  head: () => ({ meta: [
+    { title: 'White Diamond Nursery | Exceptional Plants & Beautiful Spaces' },
+    { name: 'description', content: 'Discover exceptional trees, flowering plants, and indoor greenery at White Diamond Nursery. Expert plant care, landscape consultation, and thoughtful garden inspiration.' },
+    { property: 'og:title', content: 'White Diamond Nursery | Plants for a More Beautiful Tomorrow' },
+    { property: 'og:description', content: 'Exceptional plants. Extraordinary spaces. Explore the thoughtfully selected botanical collection and personal expertise of White Diamond Nursery.' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ] }),
+  component: NurseryHomepage,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}

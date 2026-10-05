@@ -60,7 +60,7 @@ function Services() {
 const testimonials = [ { quote: '“An extraordinary selection of plants, and people who truly care. Our garden has never felt more alive.”', name: 'A garden transformed', role: 'Residential garden' }, { quote: '“Every detail felt considered, from choosing the perfect trees to finding their place in our landscape.”', name: 'A vision brought to life', role: 'Landscape project' }, { quote: '“A beautiful place to slow down, explore, and find a little inspiration to take home.”', name: 'A greener home', role: 'Indoor plant collection' } ];
 function Testimonials() {
  const [index,setIndex] = useState(0);
- const testimonial = testimonials[index];
+ const testimonial = testimonials[index] ?? { quote: '', name: '', role: '' };
  return <section className="testimonials" aria-label="Customer stories"><div className="site-container"><p className="eyebrow">Beautiful spaces. Happy people.</p><div className="stars" aria-label="Five star rating">{Array.from({length:5},(_,i) => <Star key={i}/>)}</div><div aria-live="polite" aria-atomic="true"><blockquote className="testimonial-quote">{testimonial.quote}</blockquote><p className="testimonial-person">{testimonial.name}<span>{testimonial.role}</span></p></div><div className="testimonial-controls"><Button variant="circle" aria-label="Previous testimonial" onClick={() => setIndex((index + 2) % 3)}><ArrowLeft/></Button><span className="slide-counter">0{index+1} / 03</span><Button variant="circle" aria-label="Next testimonial" onClick={() => setIndex((index + 1) % 3)}><ArrowRight/></Button></div><p className="sample-note">Illustrative stories · Customer reviews coming soon</p></div></section>;
 }
 
